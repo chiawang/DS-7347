@@ -6,8 +6,8 @@ High performance computing helps to reduce the time when performing tasks involv
 3.	
 
 
-**Reference**
+**Reference**<br />
 [1] Giles M. B. and Reguly I. 2014Trends in high-performance computing for engineering calculationsPhil. Trans. R. Soc. A.3722013031920130319
-http://doi.org/10.1098/rsta.2013.0319
+http://doi.org/10.1098/rsta.2013.0319<br />
 [2] “Amazon Elastic Compute Cloud”, available at “http://aws.amazon.com/ec2”, accessed on 15/05/2014.
 
