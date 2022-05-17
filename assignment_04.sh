@@ -9,5 +9,5 @@ ls -ltr | tail -5
 mv splitaa folder1/
 mv splitab folder2/
 mv splitac folder3/
-mv splitad folder4/
 mv splitad folder5/
+mv splitad folder7/
