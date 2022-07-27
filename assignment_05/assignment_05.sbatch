@@ -1,19 +1,23 @@
 #!/bin/sh
 
-# SLURM options:
+#SBATCH -J assignment_05
+#SBATCH -o assignment_05_%j.out
+#SBATCH -p htc
+#SBATCH --mem=4G
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=1
 
-#SBATCH --job-name=job_test    # Job name
-#SBATCH --output=job_test_%j.log   # Standard output and error log
+module purge
+wget https://github.com/chiawang/DS-7347/blob/main/assignment_05/assignment_05.R
 
-#SBATCH --partition=htc               # Partition choice
-#SBATCH --ntasks=1                    # Run a single task (by default tasks == CPU)
-#SBATCH --mem=3000                    # Memory in MB per default
-#SBATCH --time=1-00:00:00             # 7 days by default on htc partition
+spack env activate r-base
+Rscript assignment_05.R
 
-#SBATCH --mail-user=<email address>   # Where to send mail
-#SBATCH --mail-type=END,FAIL          # Mail events (NONE, BEGIN, END, FAIL, ALL)
-
-# Commands to be submitted:
-
-module load python
-python my_python_script.py
+cat /proc/cpuinfo
+echo "Job ID is $SLURM_JOBID"
+echo "Job Name is $SLURM_JOB_NAME"
+echo "Cluster Name is $SLURM_CLUSTER_NAME"
+echo "Number of nodes is $SLURM_NNODES"
+echo "Memory per Node is $SLURM_MEM_PER_NODE"
+echo "Memory per CPU is $SLURM_MEM_PER_CPU"
+echo "Cores per Node is $SLURM_CPUS_ON_NODE"
